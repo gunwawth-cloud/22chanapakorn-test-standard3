@@ -1,19 +1,25 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ข้อมูลนักเรียน - วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</title>
+  <title>รายชื่อนักเรียน นักศึกษา ห้อง 3102 - วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+    body {
+      background-color: #f0f4fc;
+      color: #333;
     }
 
     /* ===== แถบเมนูบนสุด ===== */
     header {
-      background-color: #006633; /* สีเขียวตามเว็บจริง */
+      background-color: #006633;
       color: white;
       padding: 15px 0;
     }
@@ -42,61 +48,91 @@
       background-color: rgba(255,255,255,0.15);
     }
     nav a.active {
-      background-color: #ffcc00; /* ปุ่มสีเหลือง หน้าปัจจุบัน */
+      background-color: #ffcc00;
       color: #000;
       font-weight: bold;
     }
 
-    /* ===== ส่วนเนื้อหา ===== */
+    /* ===== หัวข้อหน้า ===== */
     .page-title {
-      background-color: #eee;
-      padding: 20px 30px;
+      text-align: center;
+      padding: 25px 20px 10px;
     }
     .page-title h2 {
-      color: #006633;
-      margin: 0;
-      font-size: 24px;
+      color: #003380;
+      font-size: 22px;
+      border-bottom: 2px solid #003380;
+      display: inline-block;
+      padding-bottom: 5px;
     }
 
+    /* ===== ตารางการ์ดนักเรียน ===== */
     .content {
       padding: 30px;
-      background-color: #fff;
-      min-height: 300px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-    .content h3 {
-      color: #006633;
-      font-size: 18px;
-      margin: 25px 0 10px;
-    }
-    .content p, .content li {
-      font-size: 16px;
-      line-height: 1.7;
-    }
-    .content ul {
-      padding-left: 20px;
-      margin: 0;
+    .student-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
     }
 
-    /* ===== ข้อมูลส่วนตัว ===== */
-    .profile-box {
-      background-color: #f9f9f9;
-      border-left: 4px solid #006633;
-      padding: 18px;
-      margin: 15px 0;
-      border-radius: 0 6px 6px 0;
+    /* ===== การ์ดแต่ละคน ===== */
+    .student-card {
+      background-color: #fff;
+      border: 2px solid #0088ff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,100,200,0.08);
     }
-    .profile-box p {
+    .card-header {
+      background-color: #f0f7ff;
+      text-align: center;
+      padding: 15px 10px;
+      border-bottom: 1px solid #cce4ff;
+    }
+    .student-img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 6px rgba(0,100,200,0.15);
+      margin-bottom: 8px;
+      background-color: #e0e0e0;
+    }
+    .student-name {
+      font-weight: bold;
+      font-size: 16px;
+      color: #003380;
+    }
+    .card-body {
+      padding: 18px 20px;
+      background-color: #f8fbff;
+    }
+    .card-body p {
+      font-size: 14px;
       margin: 6px 0;
+      color: #333;
+    }
+    .card-body p strong {
+      color: #004d99;
+    }
+
+    /* ===== ปรับจอเล็ก ===== */
+    @media (max-width: 700px) {
+      .student-grid { grid-template-columns: 1fr; }
     }
 
     /* ===== ส่วนท้าย ===== */
     footer {
-      background-color: #222;
-      color: #ccc;
+      background-color: #002663;
+      color: #cce4ff;
       text-align: center;
-      padding: 15px;
+      padding: 18px;
       margin-top: 20px;
-      font-size: 14px;
+      font-size: 13px;
     }
   </style>
 </head>
@@ -118,44 +154,73 @@
 
   <!-- ===== หัวข้อหน้า ===== -->
   <section class="page-title">
-    <h2>ข้อมูลนักเรียน นักศึกษา</h2>
+    <h2>รายชื่อนักเรียน นักศึกษา (ห้อง 3102)</h2>
   </section>
 
-  <!-- ===== เนื้อหา: ข้อมูลส่วนตัว ===== -->
+  <!-- ===== รายการนักเรียน 4 คน ===== -->
   <section class="content">
+    <div class="student-grid">
 
-    <h3>📋 ข้อมูลส่วนตัวของฉัน</h3>
-    <div class="profile-box">
-      <p><strong>ชื่อ - นามสกุล:</strong> ใส่ชื่อของคุณที่นี่</p>
-      <p><strong>รหัสนักศึกษา:</strong> ใส่รหัสของคุณที่นี่</p>
-      <p><strong>ระดับชั้น / แผนก:</strong> ปวช. ... สาขาวิชา............</p>
-      <p><strong>เบอร์โทรศัพท์:</strong> ใส่เบอร์ของคุณที่นี่</p>
-      <p><strong>อีเมล:</strong> ใส่อีเมลของคุณที่นี่</p>
+      <!-- คนที่ 1 -->
+      <div class="student-card">
+        <div class="card-header">
+          <img src="student01.jpg" alt="" class="student-img">
+          <div class="student-name">นายบัณฑิต จำปา</div>
+        </div>
+        <div class="card-body">
+          <p><strong>สาขาวิชา:</strong> เทคโนโลยีสารสนเทศ</p>
+          <p><strong>ห้องเรียน:</strong> 3102</p>
+          <p><strong>สถานะ:</strong> กำลังศึกษา</p>
+        </div>
+      </div>
+
+      <!-- คนที่ 2 -->
+      <div class="student-card">
+        <div class="card-header">
+          <img src="student02.jpg" alt="" class="student-img">
+          <div class="student-name">นายชลปกรณ์ หม่อมแก้ว</div>
+        </div>
+        <div class="card-body">
+          <p><strong>สาขาวิชา:</strong> เทคโนโลยีสารสนเทศ</p>
+          <p><strong>ห้องเรียน:</strong> 3102</p>
+          <p><strong>สถานะ:</strong> กำลังศึกษา</p>
+        </div>
+      </div>
+
+      <!-- คนที่ 3 -->
+      <div class="student-card">
+        <div class="card-header">
+          <img src="student03.jpg" alt="" class="student-img">
+          <div class="student-name">นายเก่งเรียน รักวิชา</div>
+        </div>
+        <div class="card-body">
+          <p><strong>สาขาวิชา:</strong> เทคโนโลยีสารสนเทศ</p>
+          <p><strong>ห้องเรียน:</strong> 3102</p>
+          <p><strong>สถานะ:</strong> กำลังศึกษา</p>
+        </div>
+      </div>
+
+      <!-- คนที่ 4 -->
+      <div class="student-card">
+        <div class="card-header">
+          <img src="student04.jpg" alt="" class="student-img">
+          <div class="student-name">นางสาวเรียนดี มีความพยายาม</div>
+        </div>
+        <div class="card-body">
+          <p><strong>สาขาวิชา:</strong> เทคโนโลยีสารสนเทศ</p>
+          <p><strong>ห้องเรียน:</strong> 3102</p>
+          <p><strong>สถานะ:</strong> กำลังศึกษา</p>
+        </div>
+      </div>
+
     </div>
-
-    <h3>📊 จำนวนนักเรียน แยกตามระดับชั้น</h3>
-    <ul>
-      <li>ระดับ ปวช. ชั้นปีที่ 1: xxx คน</li>
-      <li>ระดับ ปวช. ชั้นปีที่ 2: xxx คน</li>
-      <li>ระดับ ปวช. ชั้นปีที่ 3: xxx คน</li>
-      <li>ระดับ ปวส.: xxx คน</li>
-    </ul>
-
-    <h3>🏆 ผลงานและรางวัล</h3>
-    <p>นักเรียนได้รับรางวัลการแข่งขันทักษะวิชาชีพ ระดับภาค และระดับชาติ มากมาย</p>
-    
-    <h3>✍️ ผลงาน / กิจกรรมที่ฉันเข้าร่วม</h3>
-    <ul>
-      <li>ใส่รายการกิจกรรมหรือผลงานที่ 1 ของคุณ</li>
-      <li>ใส่รายการกิจกรรมหรือผลงานที่ 2 ของคุณ</li>
-      <li>ใส่รายการกิจกรรมหรือผลงานที่ 3 ของคุณ</li>
-    </ul>
-
   </section>
 
   <!-- ===== ส่วนท้าย ===== -->
   <footer>
-    วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่ | ที่อยู่: เชียงใหม่ | โทร: 098 247 3666 | อีเมล: lannapoly@lannapoly.ac.th
+    วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่<br>
+    โทรศัพท์: 053-213-061 | อีเมล: lanna@polytechnic.ac.th<br>
+    Copyright © 2026 All Rights Reserved.
   </footer>
 
 </body>
