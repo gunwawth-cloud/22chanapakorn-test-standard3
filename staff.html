@@ -5,48 +5,193 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ข้อมูลบุคลากร - วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    /* ===== แถบเมนูบนสุด ===== */
+    header {
+      background-color: #006633;
+      color: white;
+      padding: 15px 0;
+    }
+    .site-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      padding-left: 30px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 5px;
+      padding-left: 30px;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      display: inline-block;
+      padding: 8px 18px;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    nav a:hover {
+      background-color: rgba(255,255,255,0.15);
+    }
+    nav a.active {
+      background-color: #ffcc00;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* ===== หัวข้อหน้า ===== */
+    .page-title {
+      background-color: #eee;
+      padding: 20px 30px;
+    }
+    .page-title h2 {
+      color: #006633;
+      margin: 0;
+      font-size: 24px;
+    }
+
+    /* ===== ตารางการ์ดบุคลากร ===== */
+    .content {
+      padding: 30px;
+      background-color: #fff;
+    }
+    .staff-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+    .staff-card {
+      background-color: #f0f0f0;
+      border-radius: 16px;
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 15px;
+    }
+    .staff-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background-color: #e0e0e0;
+      object-fit: cover;
+    }
+    .staff-name-en {
+      font-weight: bold;
+      margin: 10px 0 4px;
+      padding: 0 10px;
+      font-size: 15px;
+    }
+    .staff-name-th {
+      color: #333;
+      font-size: 14px;
+      padding: 0 10px;
+    }
+    .staff-position {
+      color: #555;
+      font-size: 12px;
+      margin-top: 4px;
+      padding: 0 10px;
+    }
+
+    /* ===== ปรับเมื่อแสดงบนจอเล็ก ===== */
+    @media (max-width: 1000px) {
+      .staff-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .staff-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .staff-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== ส่วนท้าย ===== */
+    footer {
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
 
+  <!-- ===== ส่วนหัว & เมนู ===== -->
   <header>
-    <div class="container">
-      <div class="logo"><h1>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</h1></div>
-      <nav>
-        <ul>
-          <li><a href="index.html">หน้าหลัก</a></li>
-          <li><a href="management.html">ข้อมูลผู้บริหาร</a></li>
-          <li><a href="staff.html" class="active">ข้อมูลบุคลากร</a></li>
-          <li><a href="students.html">ข้อมูลนักเรียน</a></li>
-          <li><a href="courses.html">สาขาวิชาที่เปิดสอน</a></li>
-        </ul>
-      </nav>
-    </div>
+    <div class="site-title">วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">หน้าหลัก</a></li>
+        <li><a href="management.html">ข้อมูลผู้บริหาร</a></li>
+        <li><a href="staff.html" class="active">ข้อมูลบุคลากร</a></li>
+        <li><a href="students.html">ข้อมูลนักเรียน</a></li>
+        <li><a href="courses.html">สาขาวิชาที่เปิดสอน</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section class="page-title">
-      <div class="container"><h2>ข้อมูลบุคลากร</h2></div>
-    </section>
-    <section class="content">
-      <div class="container">
-        <h3>กลุ่มสาขาเทคโนโลยีสารสนเทศ</h3>
-        <ul>
-          <li>นาย คอมพิวเตอร์ เก่งมาก — ครูผู้สอนวิชาคอมพิวเตอร์</li>
-          <li>นางสาว ไอที ชอบเรียน — ครูผู้สอนวิชาโปรแกรมมิ่ง</li>
-        </ul>
-        <h3>กลุ่มสาขาอิเล็กทรอนิกส์</h3>
-        <ul>
-          <li>นาย วงจร ชำนาญ — ครูผู้สอนวิชาอิเล็กทรอนิกส์</li>
-        </ul>
-      </div>
-    </section>
-  </main>
+  <!-- ===== หัวข้อหน้า ===== -->
+  <section class="page-title">
+    <h2>ข้อมูลบุคลากร</h2>
+  </section>
 
-  <footer>
-    <div class="container">
-      <p>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</p>
-      <p>ที่อยู่: ____________ เชียงใหม่ | โทร: 098 247 3666 | อีเมล: lannapoly@lannapoly.ac.th</p>
+  <!-- ===== รายการบุคลากร 5 คน ===== -->
+  <section class="content">
+    <div class="staff-grid">
+
+      <!-- คนที่ 1 -->
+      <div class="staff-card">
+        <img src="images/staff01.jpg" alt="" class="staff-img">
+        <div class="staff-name-en">Mrs.Methawadee Srikoch</div>
+        <div class="staff-name-th">นางเมธาวดี ศรีคช</div>
+        <div class="staff-position">หัวหน้าฝ่ายแผนงานและงบประมาณ</div>
+      </div>
+
+      <!-- คนที่ 2 -->
+      <div class="staff-card">
+        <img src="images/staff02.jpg" alt="" class="staff-img">
+        <div class="staff-name-en">Mr.Nattapol Ounphak</div>
+        <div class="staff-name-th">นายณัฐพล อุ่นภักดิ์</div>
+        <div class="staff-position">หัวหน้าสาขาวิชาบริหารธุรกิจ</div>
+      </div>
+
+      <!-- คนที่ 3 -->
+      <div class="staff-card">
+        <img src="images/staff03.jpg" alt="" class="staff-img">
+        <div class="staff-name-en">Mr.Peechar Mahawan</div>
+        <div class="staff-name-th">นายปรีชา มหาวัน</div>
+        <div class="staff-position">หัวหน้าฝ่ายพัฒนาการเรียนการสอน</div>
+      </div>
+
+      <!-- คนที่ 4 -->
+      <div class="staff-card">
+        <img src="images/staff04.jpg" alt="" class="staff-img">
+        <div class="staff-name-en">Mr.Pipop Phanyafoo</div>
+        <div class="staff-name-th">นายพิภพ ปัญญาฟู</div>
+        <div class="staff-position">หัวหน้าสาขาวิชาไฟฟ้าและอิเล็กทรอนิกส์</div>
+      </div>
+
+      <!-- คนที่ 5 -->
+      <div class="staff-card">
+        <img src="images/staff05.jpg" alt="" class="staff-img">
+        <div class="staff-name-en">Mr.Pharadon Thongsiri</div>
+        <div class="staff-name-th">นายภราดร ทองศิริ</div>
+        <div class="staff-position">หัวหน้าสาขาวิชาเทคนิคเครื่องกล</div>
+      </div>
+
     </div>
+  </section>
+
+  <!-- ===== ส่วนท้าย ===== -->
+  <footer>
+    วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่ | ที่อยู่: เชียงใหม่ | โทร: 098 247 3666 | อีเมล: lannapoly@lannapoly.ac.th
   </footer>
 
 </body>
