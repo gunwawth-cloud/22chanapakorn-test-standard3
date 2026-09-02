@@ -3,58 +3,200 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</title>
+  <title>หน้าหลัก - วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+    body {
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+
+    /* ===== แถบเมนูบนสุด ===== */
+    header {
+      background-color: #006633;
+      color: white;
+      padding: 15px 0;
+    }
+    .site-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      padding-left: 30px;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+      padding-left: 30px;
+      margin: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav a {
+      display: inline-block;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background-color: rgba(255,255,255,0.15);
+    }
+    nav a.active {
+      background-color: #ffcc00;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* ===== แบนเนอร์ต้อนรับ ===== */
+    .banner {
+      background: linear-gradient(rgba(0,102,51,0.85), rgba(0,102,51,0.75)), url('banner-bg.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 60px 30px;
+    }
+    .banner h1 {
+      font-size: 32px;
+      margin-bottom: 12px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+    .banner p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+    .btn-yellow {
+      display: inline-block;
+      background-color: #ffcc00;
+      color: #000;
+      padding: 12px 30px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 17px;
+      transition: background 0.3s;
+    }
+    .btn-yellow:hover {
+      background-color: #ffdd33;
+    }
+
+    /* ===== ส่วนเนื้อหา ===== */
+    .content {
+      padding: 40px 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-title {
+      color: #006633;
+      font-size: 20px;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #006633;
+      display: inline-block;
+    }
+    .news-list {
+      list-style: none;
+      padding-left: 10px;
+    }
+    .news-list li {
+      padding: 10px 0;
+      border-bottom: 1px dashed #ddd;
+      font-size: 16px;
+    }
+    .news-list li::before {
+      content: "📌";
+      margin-right: 10px;
+    }
+
+    /* ===== ข้อมูลวิทยาลัย ===== */
+    .info-box {
+      background-color: #f0f7f0;
+      border-left: 4px solid #006633;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 0 8px 8px 0;
+    }
+    .info-box h3 {
+      color: #006633;
+      margin-bottom: 12px;
+    }
+
+    /* ===== ส่วนท้าย ===== */
+    footer {
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 25px 20px;
+      margin-top: 20px;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* ===== ปรับจอเล็ก ===== */
+    @media (max-width: 768px) {
+      .banner h1 { font-size: 24px; }
+      nav ul { padding-left: 10px; }
+      nav a { padding: 8px 12px; font-size: 14px; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ส่วนหัว -->
+  <!-- ===== ส่วนหัว & เมนู ===== -->
   <header>
-    <div class="container">
-      <div class="logo">
-        <h1>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</h1>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">หน้าหลัก</a></li>
-          <li><a href="management.html">ข้อมูลผู้บริหาร</a></li>
-          <li><a href="staff.html">ข้อมูลบุคลากร</a></li>
-          <li><a href="students.html">ข้อมูลนักเรียน</a></li>
-          <li><a href="courses.html">สาขาวิชาที่เปิดสอน</a></li>
-        </ul>
-      </nav>
-    </div>
+    <div class="site-title">วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">หน้าหลัก</a></li>
+        <li><a href="management.html">ข้อมูลผู้บริหาร</a></li>
+        <li><a href="staff.html">ข้อมูลบุคลากร</a></li>
+        <li><a href="students.html">ข้อมูลนักเรียน</a></li>
+        <li><a href="courses.html">สาขาวิชาที่เปิดสอน</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- ส่วนเนื้อหา -->
-  <main>
-    <section class="banner">
-      <div class="container">
-        <h2>ยินดีต้อนรับสู่วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</h2>
-        <p>สถานศึกษาที่มุ่งเน้นความรู้ ทักษะ และคุณธรรม</p>
-        <a href="courses.html" class="btn">ดูสาขาวิชาที่เปิดสอน</a>
-      </div>
-    </section>
+  <!-- ===== แบนเนอร์ต้อนรับ ===== -->
+  <section class="banner">
+    <h1>ยินดีต้อนรับสู่วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</h1>
+    <p>สถานศึกษาที่มุ่งเน้นความรู้ ทักษะ และคุณธรรม เพื่อสร้างบุคคลากรคุณภาพสู่สังคม</p>
+    <a href="courses.html" class="btn-yellow">ดูสาขาวิชาที่เปิดสอน</a>
+  </section>
 
-    <section class="content">
-      <div class="container">
-        <h3>ข่าวประชาสัมพันธ์</h3>
-        <ul>
-          <li>📢 เปิดรับสมัครเรียน ประจำปีการศึกษา 2570</li>
-          <li>🏆 ยินดีด้วย นักเรียนได้รับรางวัลระดับประเทศ</li>
-          <li>📅 กำหนดการเปิดภาคเรียน วันที่ 16 พฤษภาคม</li>
-        </ul>
-      </div>
-    </section>
-  </main>
+  <!-- ===== ส่วนเนื้อหา ===== -->
+  <section class="content">
+    <h2 class="section-title">📢 ข่าวประชาสัมพันธ์</h2>
+    <ul class="news-list">
+      <li>เปิดรับสมัครนักเรียน ประจำปีการศึกษา 2570 ตั้งแต่วันนี้เป็นต้นไป</li>
+      <li>ยินดีด้วย นักเรียนได้รับรางวัลระดับประเทศ จากการแข่งขันทักษะวิชาชีพ</li>
+      <li>กำหนดการเปิดภาคเรียน ประจำปีการศึกษา 2570 วันที่ 16 พฤษภาคม 2570</li>
+      <li>📢 รับสมัครนักเรียนใหม่ ปวช. และ ปวส. หลากหลายสาขาวิชา</li>
+      <li>🏆 ขอแสดงความยินดีกับผู้สำเร็จการศึกษา ประจำปีการศึกษาที่ผ่านมา</li>
+    </ul>
 
-  <!-- ส่วนท้าย -->
-  <footer>
-    <div class="container">
-      <p>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</p>
-      <p>ที่อยู่:2 ถนนสุขเกษม ต.ป่าตัน อ.เมือง จ.เชียงใหม่ 50300</p>
-      <p>เบอร์โทร: 098 247 3666 | อีเมล: lannapoly@lannapoly.ac.th</p>
+    <!-- ===== ข้อมูลวิทยาลัย ===== -->
+    <div class="info-box">
+      <h3>ℹ️ เกี่ยวกับวิทยาลัย</h3>
+      <p><strong>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</strong> เป็นสถานศึกษาเอกชนด้านอาชีวศึกษา ที่มุ่งเน้นการผลิตและพัฒนากำลังคนด้านวิชาชีพ ให้มีความรู้ ความสามารถ มีคุณธรรม และจริยธรรม สามารถประกอบอาชีพได้จริงหรือศึกษาต่อในระดับที่สูงขึ้น</p>
     </div>
+  </section>
+
+  <!-- ===== ส่วนท้าย ===== -->
+  <footer>
+    <strong>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</strong><br>
+    ที่อยู่: 2 ถนนสุขเกษม ต.ป่าตัน อ.เมือง จ.เชียงใหม่ 50300<br>
+    เบอร์โทร: 098 247 3666 | อีเมล: lannapoly@lannapoly.ac.th<br>
+    Copyright © 2026 วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่ · สงวนลิขสิทธิ์
   </footer>
 
 </body>
