@@ -3,51 +3,223 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ข้อมูลผู้บริหาร - วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</title>
+  <title>คณะกรรมการอำนวยการ - วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    /* ===== แถบเมนูบนสุด ===== */
+    header {
+      background-color: #006633;
+      color: white;
+      padding: 15px 0;
+    }
+    .site-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      padding-left: 30px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 5px;
+      padding-left: 30px;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      display: inline-block;
+      padding: 8px 18px;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    nav a:hover {
+      background-color: rgba(255,255,255,0.15);
+    }
+    nav a.active {
+      background-color: #ffcc00;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* ===== ทางเดินหน้า ===== */
+    .breadcrumb {
+      background-color: #eee;
+      padding: 12px 30px;
+      font-size: 14px;
+      color: #555;
+    }
+    .breadcrumb a {
+      color: #006633;
+      text-decoration: none;
+    }
+
+    /* ===== หัวข้อหน้า ===== */
+    .page-title {
+      background-color: #eee;
+      padding: 10px 30px 20px;
+    }
+    .page-title h2 {
+      color: #006633;
+      margin: 0;
+      font-size: 22px;
+    }
+
+    /* ===== ตารางการ์ดกรรมการ ===== */
+    .content {
+      padding: 30px;
+      background-color: #fff;
+    }
+    .board-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    /* ===== การ์ดแต่ละคน ===== */
+    .board-card {
+      background-color: #f0f0f0;
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .board-img-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(to bottom, #e8f0e8, #d8e8d8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+    .board-img {
+      height: 90%;
+      width: auto;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .board-info {
+      padding: 12px 10px;
+    }
+    .board-name {
+      font-weight: bold;
+      font-size: 15px;
+      color: #333;
+      margin-bottom: 6px;
+    }
+    .board-position {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* ===== ปรับจอเล็ก ===== */
+    @media (max-width: 900px) {
+      .board-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .board-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== ส่วนท้าย ===== */
+    footer {
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
 
+  <!-- ===== ส่วนหัว & เมนู ===== -->
   <header>
-    <div class="container">
-      <div class="logo"><h1>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</h1></div>
-      <nav>
-        <ul>
-          <li><a href="index.html">หน้าหลัก</a></li>
-          <li><a href="management.html" class="active">ข้อมูลผู้บริหาร</a></li>
-          <li><a href="staff.html">ข้อมูลบุคลากร</a></li>
-          <li><a href="students.html">ข้อมูลนักเรียน</a></li>
-          <li><a href="courses.html">สาขาวิชาที่เปิดสอน</a></li>
-        </ul>
-      </nav>
-    </div>
+    <div class="site-title">วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">หน้าหลัก</a></li>
+        <li><a href="management.html">ข้อมูลผู้บริหาร</a></li>
+        <li><a href="staff.html">ข้อมูลบุคลากร</a></li>
+        <li><a href="students.html">ข้อมูลนักเรียน</a></li>
+        <li><a href="courses.html">สาขาวิชาที่เปิดสอน</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section class="page-title">
-      <div class="container"><h2>ข้อมูลผู้บริหาร</h2></div>
-    </section>
-    <section class="content">
-      <div class="container">
-        <div class="person">
-          <h3>นาย กิตติศักดิ์ มั่นคง</h3>
-          <p><strong>ตำแหน่ง:</strong> ผู้อำนวยการวิทยาลัย</p>
-          <p><strong>หน้าที่รับผิดชอบ:</strong> บริหารงานทั่วไปของวิทยาลัย</p>
+  <!-- ===== ทางเดินหน้า ===== -->
+  <section class="breadcrumb">
+    <a href="index.html">หน้าหลัก</a> <span>›</span> คณะกรรมการอำนวยการ
+  </section>
+
+  <!-- ===== หัวข้อหน้า ===== -->
+  <section class="page-title">
+    <h2>คณะกรรมการอำนวยการ</h2>
+  </section>
+
+  <!-- ===== รายการกรรมการ 4 คน ===== -->
+  <section class="content">
+    <div class="board-grid">
+
+      <!-- คนที่ 1 -->
+      <div class="board-card">
+        <div class="board-img-box">
+          <img src="board01.jpg" alt="" class="board-img">
         </div>
-        <div class="person">
-          <h3>นางสาว สุนันทา รักเรียน</h3>
-          <p><strong>ตำแหน่ง:</strong> รองผู้อำนวยการฝ่ายวิชาการ</p>
-          <p><strong>หน้าที่รับผิดชอบ:</strong> งานหลักสูตรและการเรียนการสอน</p>
+        <div class="board-info">
+          <div class="board-name">นายสมนึก กิจผลงกาล</div>
+          <div class="board-position">ผู้รับใบอนุญาตและผู้รับผิดชอบ</div>
         </div>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="container">
-      <p>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</p>
-      <p>ที่อยู่: ____________ เชียงใหม่ | โทร: 098 247 3666 | อีเมล: lannapoly@lannapoly.ac.th</p>
+      <!-- คนที่ 2 -->
+      <div class="board-card">
+        <div class="board-img-box">
+          <img src="board02.jpg" alt="" class="board-img">
+        </div>
+        <div class="board-info">
+          <div class="board-name">นายฉลวย พันธุ์รอง</div>
+          <div class="board-position">ผู้อำนวยการ</div>
+        </div>
+      </div>
+
+      <!-- คนที่ 3 -->
+      <div class="board-card">
+        <div class="board-img-box">
+          <img src="board03.jpg" alt="" class="board-img">
+        </div>
+        <div class="board-info">
+          <div class="board-name">นายศิภพ เจริญกุลกิจ</div>
+          <div class="board-position">รองผู้อำนวยการฝ่ายส่งเสริมการศึกษา</div>
+        </div>
+      </div>
+
+      <!-- คนที่ 4 -->
+      <div class="board-card">
+        <div class="board-img-box">
+          <img src="board04.jpg" alt="" class="board-img">
+        </div>
+        <div class="board-info">
+          <div class="board-name">นายประเสริฐ ชูดวง</div>
+          <div class="board-position">รองผู้อำนวยการฝ่ายกิจการนักเรียน</div>
+        </div>
+      </div>
+
     </div>
+  </section>
+
+  <!-- ===== ส่วนท้าย ===== -->
+  <footer>
+    วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่<br>
+    ที่อยู่:2 ถนนสุขเกษม ต.ป่าตัน อ.เมือง จ.เชียงใหม่ 50300 | โทร: 098 247 3666 | อีเมล: lannapoly@lannapoly.ac.th
   </footer>
 
 </body>
