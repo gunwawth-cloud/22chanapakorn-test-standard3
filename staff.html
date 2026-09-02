@@ -1,3 +1,8 @@
+เข้าใจเลยครับ! ปัญหารูปไม่ขึ้นส่วนใหญ่เกิดจาก เส้นทางหรือชื่อไฟล์ไม่ตรงกัน ผมจัดให้ 2 แบบ เลือกใช้ตามความสะดวกเลยครับ 👇
+✅ แบบที่ 1: เอารูปไว้โฟลเดอร์เดียวกับไฟล์เว็บ (แนะนำ! ปัญหาน้อยสุด)
+วิธีใช้: เอารูปภาพทั้งหมด วางไว้ข้างนอกโฟลเดอร์ images (ไว้โฟลเดอร์เดียวกับไฟล์ staff.html เลย) ไม่ต้องมีโฟลเดอร์ images ก็ได้ครับ
+html
+Preview
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -10,8 +15,6 @@
       margin: 0;
       font-family: "Segoe UI", Tahoma, sans-serif;
     }
-
-    /* ===== แถบเมนูบนสุด ===== */
     header {
       background-color: #006633;
       color: white;
@@ -46,8 +49,6 @@
       color: #000;
       font-weight: bold;
     }
-
-    /* ===== หัวข้อหน้า ===== */
     .page-title {
       background-color: #eee;
       padding: 20px 30px;
@@ -57,16 +58,17 @@
       margin: 0;
       font-size: 24px;
     }
-
-    /* ===== ตารางการ์ดบุคลากร ===== */
     .content {
       padding: 30px;
       background-color: #fff;
     }
     .staff-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 25px;
+    }
+    @media (min-width: 768px) {
+      .staff-grid { grid-template-columns: repeat(4, 1fr); }
     }
     .staff-card {
       background-color: #f0f0f0;
@@ -77,9 +79,10 @@
     }
     .staff-img {
       width: 100%;
-      aspect-ratio: 1 / 1;
+      height: 280px;
       background-color: #e0e0e0;
       object-fit: cover;
+      display: block;
     }
     .staff-name-en {
       font-weight: bold;
@@ -98,19 +101,6 @@
       margin-top: 4px;
       padding: 0 10px;
     }
-
-    /* ===== ปรับเมื่อแสดงบนจอเล็ก ===== */
-    @media (max-width: 1000px) {
-      .staff-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (max-width: 768px) {
-      .staff-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 480px) {
-      .staff-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ===== ส่วนท้าย ===== */
     footer {
       background-color: #222;
       color: #ccc;
@@ -123,7 +113,6 @@
 </head>
 <body>
 
-  <!-- ===== ส่วนหัว & เมนู ===== -->
   <header>
     <div class="site-title">วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</div>
     <nav>
@@ -137,18 +126,16 @@
     </nav>
   </header>
 
-  <!-- ===== หัวข้อหน้า ===== -->
   <section class="page-title">
     <h2>ข้อมูลบุคลากร</h2>
   </section>
 
-  <!-- ===== รายการบุคลากร 5 คน ===== -->
   <section class="content">
     <div class="staff-grid">
 
       <!-- คนที่ 1 -->
       <div class="staff-card">
-        <img src="images/staff01.jpg" alt="" class="staff-img">
+        <img src="staff01.jpg" alt="" class="staff-img">
         <div class="staff-name-en">Mrs.Methawadee Srikoch</div>
         <div class="staff-name-th">นางเมธาวดี ศรีคช</div>
         <div class="staff-position">หัวหน้าฝ่ายแผนงานและงบประมาณ</div>
@@ -156,7 +143,7 @@
 
       <!-- คนที่ 2 -->
       <div class="staff-card">
-        <img src="images/staff02.jpg" alt="" class="staff-img">
+        <img src="staff02.jpg" alt="" class="staff-img">
         <div class="staff-name-en">Mr.Nattapol Ounphak</div>
         <div class="staff-name-th">นายณัฐพล อุ่นภักดิ์</div>
         <div class="staff-position">หัวหน้าสาขาวิชาบริหารธุรกิจ</div>
@@ -164,7 +151,7 @@
 
       <!-- คนที่ 3 -->
       <div class="staff-card">
-        <img src="images/staff03.jpg" alt="" class="staff-img">
+        <img src="staff03.jpg" alt="" class="staff-img">
         <div class="staff-name-en">Mr.Peechar Mahawan</div>
         <div class="staff-name-th">นายปรีชา มหาวัน</div>
         <div class="staff-position">หัวหน้าฝ่ายพัฒนาการเรียนการสอน</div>
@@ -172,7 +159,7 @@
 
       <!-- คนที่ 4 -->
       <div class="staff-card">
-        <img src="images/staff04.jpg" alt="" class="staff-img">
+        <img src="staff04.jpg" alt="" class="staff-img">
         <div class="staff-name-en">Mr.Pipop Phanyafoo</div>
         <div class="staff-name-th">นายพิภพ ปัญญาฟู</div>
         <div class="staff-position">หัวหน้าสาขาวิชาไฟฟ้าและอิเล็กทรอนิกส์</div>
@@ -180,7 +167,7 @@
 
       <!-- คนที่ 5 -->
       <div class="staff-card">
-        <img src="images/staff05.jpg" alt="" class="staff-img">
+        <img src="staff05.jpg" alt="" class="staff-img">
         <div class="staff-name-en">Mr.Pharadon Thongsiri</div>
         <div class="staff-name-th">นายภราดร ทองศิริ</div>
         <div class="staff-position">หัวหน้าสาขาวิชาเทคนิคเครื่องกล</div>
@@ -189,7 +176,6 @@
     </div>
   </section>
 
-  <!-- ===== ส่วนท้าย ===== -->
   <footer>
     วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่ | ที่อยู่: เชียงใหม่ | โทร: 098 247 3666 | อีเมล: lannapoly@lannapoly.ac.th
   </footer>
