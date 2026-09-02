@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ส่วนหัว */
+header {
+  background: #006633;
+  color: white;
+  padding: 1rem 0;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logo h1 {
+  font-size: 1.2rem;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+nav a:hover,
+nav a.active {
+  background: #ffcc00;
+  color: #003300;
+}
+
+/* แบนเนอร์ */
+.banner {
+  background: linear-gradient(rgba(0,102,51,0.8), rgba(0,102,51,0.6)), url(images/banner.jpg) center/cover;
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+.banner h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background: #ffcc00;
+  color: #003300;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+.btn:hover {
+  background: #ffc107;
+}
+
+/* เนื้อหา */
+.page-title {
+  background: #eee;
+  padding: 1.5rem 0;
+}
+.page-title h2 {
+  color: #006633;
+}
+.content {
+  padding: 2rem 0;
+  background: white;
+}
+.content h3 {
+  color: #006633;
+  margin: 1.2rem 0 0.5rem;
+}
+.content ul {
+  margin-left: 1.5rem;
+}
+.person, .course-item {
+  padding: 1rem;
+  margin: 1rem 0;
+  background: #f9f9f9;
+  border-left: 4px solid #006633;
+  border-radius: 0 6px 6px 0;
+}
+
+/* ส่วนท้าย */
+footer {
+  background: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+}
+
+/* ปรับมือถือ */
+@media(max-width:768px) {
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .banner h2 {
+    font-size: 1.3rem;
+  }
+}
